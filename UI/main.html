@@ -10,7 +10,7 @@
     <title>Dashboard</title>
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="container">
         <div class="dashboard sombra">
             <div class="dashboardHeader">
                 <div class="datosUsuario">
@@ -18,14 +18,44 @@
                 </div>
             </div>
             <div class="dashboardMain">
-                <div class="listaEmpleados">
+                <div class="listaEmpleados sombra">
                     <h2>Empleados</h2>
                 </div>
                 <div class="buttons">
-                    <button id="btnAdd" class="btnAdd"><i class="fas fa-user-plus btnIcon"></i></button>
+                    <button id="btnAdd" class="btnAdd sombra"><i class="fas fa-user-plus btnIcon"></i></button>
                 </div>
             </div>
         </div>
     </div>
+    <form method="POST" class="addUserForm form sombra" id="addUserForm">
+        <h2>Añadir nuevo empleado</h2>
+        <div class="field">
+            <label for="name">Nombre</label>
+            <input id="name" class="textInput" placeholder="" type="text">
+        </div>
+        <div class="field">
+            <label for="lastName">Apellidos</label>
+            <input id="lastName" class="textInput" placeholder="" type="text">
+        </div>
+        <div class="field">
+            <label for="phone">Teléfono</label>
+            <input id="phone" class="textInput" placeholder="" type="text">
+        </div>
+        <div class="field">
+            <label for="email">Correo electrónico</label>
+            <input id="email" class="textInput" placeholder="" type="text">
+        </div>
+
+        <div class="field">
+            <label for="adress">Dirección</label>
+            <input id="adress" class="textInput" placeholder="" type="text">
+        </div>
+        <div class="formButtons">
+            <button class="cancelBtn sombra" id="cancelAdd"><i class="fas fa-times btnIcon cancelIcon"></i></button>
+            <button type="reset" id="addUserBtn" class="formBtn btn sombra">Agregar</button>
+        </div>
+        
+    </form>
+    <script src="JS/addUser.js"></script>
 </body>
 </html>

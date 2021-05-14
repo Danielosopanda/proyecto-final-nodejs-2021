@@ -2,6 +2,7 @@
     --background: #00adb5;
     --formBackground: #fafafa;
     --btnBackground: #393e46;
+    --secondaryColor: #aad8d3;
     --fontColor: #090E11;
     --formWidth: 25%;
     --border: 1px solid #000;
@@ -74,11 +75,15 @@ body {
     border: none;
     border-radius: var(--borderRadius);
     padding: 8px;
-    margin-top: 12px;
+    /* margin-top: 12px; */
     background: var(--btnBackground);
     font-weight: bold;
     font-size: 16px;
     color: #fafafa;
+}
+
+.logInForm .btn {
+    margin-top: 12px;
 }
 
 
@@ -87,7 +92,7 @@ body {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 6fr;
-    background: var(--formBackground);
+    background: #eeeeee;
     width: 80%;
     height: 90vh;
     border-radius: var(--borderRadius);
@@ -98,7 +103,7 @@ body {
     width: 100%;
     justify-content: flex-end;
     align-items: center;
-    background: #aad8d3;
+    background: var(--secondaryColor);
     border-radius: var(--borderRadius) var(--borderRadius) 0 0;
     height: 100%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
@@ -133,10 +138,12 @@ body {
 }
 
 .dashboardMain .listaEmpleados {
-    /* background: red; */
+    background: #fafafa;
     width: 90%;
     height: 100%;
     padding: 16px;
+    margin: 0 8px;
+    border-radius: var(--borderRadius);
 }
 
 .buttons {
@@ -144,7 +151,7 @@ body {
     align-items: flex-end;
     height: 100%;
     width: 10%;
-    padding-left: 12px;
+    padding-left: 8px;
 }
 
 .btnAdd {
@@ -162,14 +169,56 @@ body {
 }
 
 .btnAdd:hover {
-    background: #f3f3f3;
+    background: #eeeeee;
 }
+
+.addUserForm {
+    position: absolute;
+    top: 25%;
+    left: 37.5%;
+    visibility: hidden;
+    transition: 300ms ease all;
+}
+
+.formButtons {
+    display: grid;
+    width: 100%;
+    height: 30px;
+    grid-template-columns: 1fr 7fr;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.cancelBtn {
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    border:none;
+    border-radius: var(--borderRadius);
+    background: #cc0000;
+}
+.cancelBtn:hover {
+    background: #e70000;
+}
+
+.addUserBtn {
+    width: 100%;
+    margin-top: 0;
+}
+
+.formBtn:hover {
+    background: #40454e;
+}
+
 
 /**** Íconos ****/
 .btnIcon {
     font-size: 24px;
 }
 
+.cancelIcon {
+    color: #fafafa;
+}
 
 /**** Otros estilos ****/
 .sombra {
