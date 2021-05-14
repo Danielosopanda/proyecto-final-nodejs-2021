@@ -6,6 +6,7 @@
     --formWidth: 25%;
     --border: 1px solid #000;
     --borderRadius: 4px;
+    --dashboardPadding: 24px;
     /* 
         eeeeee
         aad8d3
@@ -80,6 +81,97 @@ body {
     color: #fafafa;
 }
 
+
+/**** Dashboard ****/
+.dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr;
+    background: var(--formBackground);
+    width: 80%;
+    height: 90vh;
+    border-radius: var(--borderRadius);
+}
+
+.dashboard .dashboardHeader {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+    background: #aad8d3;
+    border-radius: var(--borderRadius) var(--borderRadius) 0 0;
+    height: 100%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
+    padding: var(--dashboardPadding);
+}
+
+.datosUsuario {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.datosUsuario h3 {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.datosUsuario .imgUsuario {
+    width: 40px;
+    margin-right: calc(4px);
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0px 0px 0px 2px #fafafa,
+                0 0 0 4px #000;
+}
+
+.dashboard .dashboardMain {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--dashboardPadding);
+}
+
+.dashboardMain .listaEmpleados {
+    /* background: red; */
+    width: 90%;
+    height: 100%;
+    padding: 16px;
+}
+
+.buttons {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: 10%;
+    padding-left: 12px;
+}
+
+.btnAdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+    border: 1px solid #000;
+    border-radius: var(--borderRadius);
+    outline: none;
+    height: 20%;
+    width: 100%;
+    cursor: pointer;
+    background: #fafafa;
+}
+
+.btnAdd:hover {
+    background: #f3f3f3;
+}
+
+/**** Íconos ****/
+.btnIcon {
+    font-size: 24px;
+}
+
+
+/**** Otros estilos ****/
 .sombra {
     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15),
                 15px 15px 40px rgba(0, 0, 0, 0.05);
