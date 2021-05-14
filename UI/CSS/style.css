@@ -1,5 +1,15 @@
 :root {
-    
+    --background: #00adb5;
+    --formBackground: #fafafa;
+    --btnBackground: #393e46;
+    --fontColor: #090E11;
+    --formWidth: 25%;
+    --border: 1px solid #000;
+    --borderRadius: 4px;
+    /* 
+        eeeeee
+        aad8d3
+    */
 }
 
 * {
@@ -7,4 +17,70 @@
     margin: 0;
     box-sizing: border-box;
     font-family: 'Open Sans';
+}
+
+body {
+    background: var(--background);
+    color: var(--fontColor);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: var(--formWidth);
+    border-radius: var(--borderRadius);
+    padding: 24px;
+    background: var(--formBackground);
+    /* border: var(--border); */
+}
+
+.form h2 {
+    align-self: flex-start;
+}
+
+.form .field {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 4px 0;
+}
+
+.field label {
+    font-size: 13px;
+}
+
+.field .textInput {
+    margin-top: 1px;
+    padding: 4px 3px;
+    outline: none;
+    font-size: 14px;
+}
+
+.form .btn {
+    width: 100%;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    border-radius: var(--borderRadius);
+    padding: 8px;
+    margin-top: 12px;
+    background: var(--btnBackground);
+    font-weight: bold;
+    font-size: 16px;
+    color: #fafafa;
+}
+
+.sombra {
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.15),
+                15px 15px 40px rgba(0, 0, 0, 0.05);
 }
