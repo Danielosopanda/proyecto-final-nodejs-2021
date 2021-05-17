@@ -1,28 +1,34 @@
 const   employeeForm = document.querySelector("#addEmployeeForm"),
-        btn = document.querySelector("addEmployeeBtn");
+        btn = document.querySelector("#addEmployeeBtn"),
+        employeeName = document.querySelector("#name"),
+        employeeLastName = document.querySelector("#lastName"),
+        employeeEmail = document.querySelector("#email"),
+        employeePhone = document.querySelector("#phone"),
+        employeeAdress = document.querySelector("#adress");
 
-employeeForm.addEventListener("click", (e) => {
-    let employeeName = employeeForm.querySelector("#name").value,
-        employeeLastName = employeeForm.querySelector("#lastName").value,
-        employeeEmail = employeeForm.querySelector("#email").value,
-        employeePhone = employeeForm.querySelector("#phone").value,
-        employeeAdress = employeeForm.querySelector("#adress").value;
+btn.addEventListener("click", (e) => {
 
-        axios({
-            method: "POST",
-            url: "localhost:3000/employee",
-            data: {
-                nombreEmpleado: employeeName,
-                apellidosEmpleado: employeeLastName,
-                emailEmpleado: employeeEmail,
-                telefonoEmpleado: employeePhone,
-                direccionEmpleado: employeeAdress
-            }
-        })
-        .then((response) => {
-            console.log(response);
-        })
-        .catch((error) => {
-            console.log(error);
-        });
+    let name = employeeName.value,
+        lastName = employeeLastName.value,
+        email = employeeEmail.value,
+        phone = employeePhone.value,
+        adress = employeeAdress.value;
+
+    axios({
+        method: "POST",
+        url: "localhost:3000/employee/",
+        data: {
+            nombreEmpleado: name,
+            apellidosEmpleado: lastName,
+            emailEmpleado: email,
+            telefonoEmpleado: phone,
+            direccionEmpleado: adress
+        }
+    })
+    .then((response) => {
+        console.log(response);
+    })
+    .catch((error) => {
+        console.log(error);
+    });
 });

@@ -6,6 +6,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
     "mysql": "^2.18.1",
     "node": "^16.1.0",
     "nodemon": "^2.0.7"
@@ -15,6 +16,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon index.js"
   },
-  "author": "Daniel Martínez Guerrero",
+  "author": "Daniel Martínez Guerrero & Daniel Arrieta",
   "license": "ISC"
 }
