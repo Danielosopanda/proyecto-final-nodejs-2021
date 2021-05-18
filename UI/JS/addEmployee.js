@@ -6,7 +6,7 @@ const   employeeForm = document.querySelector("#addEmployeeForm"),
         employeePhone = document.querySelector("#phone"),
         employeeAdress = document.querySelector("#adress");
 
-btn.addEventListener("click", (e) => {
+employeeForm.addEventListener("submit", (e) => {
 
     let name = employeeName.value,
         lastName = employeeLastName.value,

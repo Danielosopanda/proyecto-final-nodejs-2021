@@ -155,7 +155,7 @@ body {
 
 .listaEmpleados tr {
     display: grid;
-    grid-template-columns: repeat(5, minmax(100px, 1fr)); /*  */
+    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 1fr; /*  */
     padding: 4px 0;
     text-align: left;
     border-bottom: 1px solid black;
@@ -166,8 +166,45 @@ body {
 }
 
 .listaEmpleados td {
+    display: flex;
+    align-items: center;
     font-size: 15px;
+    padding: 6px 0;
 }
+
+.listaEmpleados .userBtns {
+    display: flex;
+    justify-content: space-around;
+}
+
+.userBtns button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #fafafa;
+    outline: none;
+    border: 1px solid black;
+    
+}
+
+.userBtns .editEmployee:hover {
+    background: #eeeeee;
+}
+
+.userBtns .removeEmployee:hover {
+    background: #ff1010;
+    color: #fafafa;
+}
+
+.userBtns button i {
+    font-size: 16px;
+}
+
 
 .buttons {
     display: flex;
