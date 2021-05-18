@@ -1,4 +1,3 @@
-
 const   form = document.querySelector("#logInForm"),
         emailInput = document.querySelector("#email"),
         passwordInput = document.querySelector("#password");
@@ -8,7 +7,7 @@ window.onload = () => {
     if(!localStorage.getItem("token")) {
         form.addEventListener("submit", login);
     } else {
-        window.location.href = "main.html";
+        window.location.href = "login.html";
     }
 }
 
