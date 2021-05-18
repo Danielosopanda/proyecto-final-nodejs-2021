@@ -50,6 +50,14 @@
                             <td>daniel@correo.com</td>
                             <td>1423421</td>
                             <td>Cale adfdsafsssdf</td>
+                            <td class="userBtns">
+                                <button class="sombra editEmployee">
+                                    <i class="fas fa-user-edit"></i>
+                                </button>
+                                <button class="sombra removeEmployee">
+                                    <i class="fas fa-minus-circle"></i>
+                                </button>
+                            </td>
                         </tr>
                         <tr>
                             <td>Daniel</td>
@@ -94,11 +102,25 @@
             <button class="cancelBtn sombra" id="cancelAdd"><i class="fas fa-times btnIcon cancelIcon"></i></button>
             <button type="submit" id="addEmployeeBtn" class="formBtn btn sombra">Agregar</button>
         </div>
-        
     </form>
+
+    <form id="deleteEmployeeForm" class="deleteEmployeeForm sombra form">
+        <h3>¿Eliminar empleado?</h3>
+        <div class="deleteBtns">
+            <button id="cancelDelete" class="sombra cancelDelete">
+                <i class="fas fa-times btnIcon cancelIcon"></i>
+            </button>
+            <button id="acceptDelete" class="sombra acceptDelete">
+                <i class="fas fa-check-circle acceptIcon"></i>
+            </button>
+        </div>
+    </form>
+
+
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script src="JS/addUser.js"></script>
+    <script src="JS/addEmployeeFront.js"></script>
     <script src="JS/showEmployee.js"></script>
     <script src="JS/addEmployee.js"></script>
+    <script src="JS/deleteEmployee.js"></script>
 </body>
 </html>

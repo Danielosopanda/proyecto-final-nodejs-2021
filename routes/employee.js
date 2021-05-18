@@ -54,7 +54,8 @@ employee.put("/:id([0-9]{1-3})", async(req, res, next) => {
     const {nombreEmpleado, apellidosEmpleado, emailEmpleado, telefonoEmpleado, direccionEmpleado } = req.body;
 
     if(nombreEmpleado && apellidosEmpleado && emailEmpleado && telefonoEmpleado && direccionEmpleado){
-        let query= `UPDATE empleado SET nombreEmpleado='${nombreEmpleado}', apellidosEmpleado ='${apellidosEmpleado}',`;
+        
+        let query= `UPDATE Empleado SET nombreEmpleado='${nombreEmpleado}', apellidosEmpleado ='${apellidosEmpleado}', `;
         query += `emailEmpleado ='${emailEmpleado}', telefonoEmpleado='${telefonoEmpleado}', direccionEmpleado='${direccionEmpleado}'`;
         const rows = await db.query(query);
 
@@ -63,7 +64,8 @@ employee.put("/:id([0-9]{1-3})", async(req, res, next) => {
         }
         return res.status(500).json({ code: 500, message: "Error" });
     }
-    return res.status(500).json({code:500, message:"Campos incompletos, intente nuevamente"})
+
+    return res.status(500).json({code: 500, message: "Campos incompletos, intente nuevamente"})
 
 })
 

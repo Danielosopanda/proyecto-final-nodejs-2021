@@ -257,6 +257,7 @@ body {
     border-radius: var(--borderRadius);
     background: #cc0000;
 }
+
 .cancelBtn:hover {
     background: #e70000;
 }
@@ -270,6 +271,66 @@ body {
     background: #40454e;
 }
 
+.deleteEmployeeForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: absolute;
+    top: 40%;
+    visibility: hidden;
+    left: 40%;
+    min-height: 150px;
+    width: 15%;
+}
+
+.deleteEmployeeForm h3 {
+    width: 100%;
+    text-align: left;
+}
+
+.deleteEmployeeForm .deleteBtns {
+     display: grid;
+     gap: 8px;
+     width: 100%;
+     grid-template-columns: 1fr 3fr;
+     
+}
+.deleteBtns button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+    border: none;
+    padding: 6px;
+    border-radius: var(--borderRadius);
+}
+
+.deleteBtns .cancelDelete {
+    background: #cc0000;
+}
+
+.deleteBtns .cancelDelete:hover {
+    background: #e70000;
+}
+
+.deleteBtns .acceptDelete {
+    background: var(--btnBackground);
+}
+
+.deleteBtns .acceptDelete:hover {
+    background: #40454e;
+}
+
+.deleteBtns .cancelDelete i {
+    color: #fafafa;
+}
+
+.deleteBtns .acceptDelete i {
+    color: #fafafa;
+    font-size: 22px;
+}
 
 /**** Íconos ****/
 .btnIcon {
