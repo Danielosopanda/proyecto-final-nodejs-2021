@@ -16,7 +16,7 @@ employeeForm.addEventListener("submit", (e) => {
 
     axios({
         method: "POST",
-        url: "localhost:3000/employee/",
+        url: "http://localhost:3000/employee/",
         data: {
             nombreEmpleado: name,
             apellidosEmpleado: lastName,
