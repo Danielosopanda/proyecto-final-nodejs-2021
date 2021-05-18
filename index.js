@@ -4,6 +4,7 @@ const app = express();
 
 const user = require("./routes/user")
 const employee = require("./routes/employee");
+
 const CORS = require("./middleware/cors");
 const auth = require("./middleware/auth");
 const index = require("./middleware/index");

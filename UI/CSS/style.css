@@ -145,6 +145,28 @@ body {
     padding: 16px;
     margin: 0 8px;
     border-radius: var(--borderRadius);
+    
+}
+
+.listaEmpleados .tablaEmpleados {
+    width: 100%;
+    overflow: scroll;
+}
+
+.listaEmpleados tr {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(100px, 1fr)); /*  */
+    padding: 4px 0;
+    text-align: left;
+    border-bottom: 1px solid black;
+}
+
+.listaEmpleados tr th {
+    text-align: left;
+}
+
+.listaEmpleados td {
+    font-size: 15px;
 }
 
 .buttons {

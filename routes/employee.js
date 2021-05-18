@@ -1,7 +1,7 @@
 const { response } = require("express");
 const express = require("express");
 const employee = express.Router();
-const db = require("./config/database");
+const db = require("../config/database");
 
 employee.get("/", async (request, response, next) => {
 
@@ -23,7 +23,7 @@ employee.get("/:nombreEmpleado", async (request, response, next) => {
 
 employee.post("/", async (request, response, next) => {
     
-    const {nombreEmpleado, apellidosEmpleado, emailEmpleado, telefonoEmpleado, direccionEmpleado} = request.body;
+    const { nombreEmpleado, apellidosEmpleado, emailEmpleado, telefonoEmpleado, direccionEmpleado } = request.body;
     let query = `INSERT INTO Empleado VALUES (NULL, '${nombreEmpleado}', '${apellidosEmpleado}', '${emailEmpleado}', '${telefonoEmpleado}', '${direccionEmpleado}')`;
     
 
