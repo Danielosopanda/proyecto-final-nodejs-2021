@@ -17,6 +17,8 @@ const login = (e) => {
 
     let email = emailInput.value,
         password = passwordInput.value;
+    
+    console.log(email, password);
 
     axios({
 
@@ -24,7 +26,7 @@ const login = (e) => {
         url: "localhost:3000/user/login",
         data: {
             correoUsuario: email,
-            passwordUsuario: password 
+            passwordUsuario: password
         }
 
     }).then(response => {
