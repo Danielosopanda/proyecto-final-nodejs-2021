@@ -36,7 +36,6 @@ employee.post("/", async (request, response, next) => {
     }
     return response.status(500).json({ code: 500, message: "Campos incompletos" });
     
-
 });
 
 module.exports = employee;

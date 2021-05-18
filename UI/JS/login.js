@@ -23,7 +23,7 @@ const login = (e) => {
     axios({
 
         method: "POST",
-        url: "localhost:3000/user/login",
+        url: "http://localhost:3000/user/login",
         data: {
             correoUsuario: email,
             passwordUsuario: password
