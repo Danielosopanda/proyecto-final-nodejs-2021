@@ -1,4 +1,3 @@
-/* const express = require("express"); */
 
 const   form = document.querySelector("#logInForm"),
         emailInput = document.querySelector("#email"),
