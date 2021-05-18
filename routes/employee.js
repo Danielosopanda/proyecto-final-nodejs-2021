@@ -54,7 +54,7 @@ employee.put("/:id([0-9]{1-3})", async(req, res, next) => {
     const {nombreEmpleado, apellidosEmpleado, emailEmpleado, telefonoEmpleado, direccionEmpleado } = req.body;
 
     if(nombreEmpleado && apellidosEmpleado && emailEmpleado && telefonoEmpleado && direccionEmpleado){
-        let query= `UPDATE empelado SET nombreEmpleado='${nombreEmpleado}', apellidosEmpleado ='${apellidosEmpleado}',`;
+        let query= `UPDATE empleado SET nombreEmpleado='${nombreEmpleado}', apellidosEmpleado ='${apellidosEmpleado}',`;
         query += `emailEmpleado ='${emailEmpleado}', telefonoEmpleado='${telefonoEmpleado}', direccionEmpleado='${direccionEmpleado}'`;
         const rows = await db.query(query);
 
