@@ -146,12 +146,11 @@ body {
     padding: 16px;
     margin: 0 8px;
     border-radius: var(--borderRadius);
-    overflow: scroll;
+    overflow-y: scroll;
 }
 
 .listaEmpleados .tablaEmpleados {
     width: 100%;
-    overflow: scroll;
 }
 
 .listaEmpleados th {
@@ -336,6 +335,25 @@ body {
 .deleteBtns .acceptDelete i {
     color: #fafafa;
     font-size: 22px;
+}
+
+/*** Scrollbar ***/
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    width: 10px;
+    background: var(--secondaryColor);
+    border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #999;
+    /* margin: 1px; */
+    width: 10px;
+    border-radius: 8px;
 }
 
 /**** Íconos ****/
