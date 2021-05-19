@@ -36,7 +36,9 @@ const displayEmployee = (employee) => {
 
     employee.forEach(empleado => {
 
-        employeeTable += ` 
+        console.log(empleado.nombreEmpleado, empleado.apellidosEmpleado, empleado.emailEmpleado, empleado.telefonoEmpleado, empleado.direccionEmpleado)
+
+        employeeTable.innerHTML += ` 
                             <tr>
                                 <td>${empleado.nombreEmpleado}</td>
                                 <td>${empleado.apellidosEmpleado}</td>
