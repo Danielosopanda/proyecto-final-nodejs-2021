@@ -136,6 +136,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: var(--dashboardPadding);
+    overflow: hidden;
 }
 
 .dashboardMain .listaEmpleados {
@@ -145,7 +146,7 @@ body {
     padding: 16px;
     margin: 0 8px;
     border-radius: var(--borderRadius);
-    
+    overflow: scroll;
 }
 
 .listaEmpleados .tablaEmpleados {
@@ -153,9 +154,14 @@ body {
     overflow: scroll;
 }
 
+.listaEmpleados th {
+    display: grid;
+    grid-template-columns: 1fr 2fr 3fr 4fr 2fr 3fr 1fr;
+}
+
 .listaEmpleados tr {
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 1fr 2fr 1fr; /*  */
+    grid-template-columns: 1fr 2fr 3fr 4fr 2fr 3fr 2fr; /*  */
     padding: 4px 0;
     text-align: left;
     border-bottom: 1px solid black;
@@ -174,7 +180,7 @@ body {
 
 .listaEmpleados .userBtns {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .userBtns button {
