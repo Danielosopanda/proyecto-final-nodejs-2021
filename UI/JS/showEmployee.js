@@ -40,6 +40,7 @@ const displayEmployee = (employee) => {
 
         employeeTable.innerHTML += ` 
                             <tr>
+                                <td>${empleado.idEmpleado}</td>
                                 <td>${empleado.nombreEmpleado}</td>
                                 <td>${empleado.apellidosEmpleado}</td>
                                 <td>${empleado.emailEmpleado}</td>
