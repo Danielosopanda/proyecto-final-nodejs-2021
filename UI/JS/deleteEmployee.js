@@ -34,7 +34,7 @@ acceptDelete.addEventListener("click", () => {
         method: "DELETE",
         url: "http://localhost:3000/employee",
         data: {
-
+            
         }
     });
 

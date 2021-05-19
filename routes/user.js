@@ -12,11 +12,13 @@ user.post("/login", async (req, res, next)=>{
 
     if(correoUsuario && passwordUsuario){
         if(rows.length == 1){
+            
             const token = jwt.sign({
                 idUsuario: rows[0].idUsuario,
                 correoUsuario: rows[0].correoUsuario
             }, "debugkey");
-            return res.status(200).json({ code:200, message: token });
+
+            return res.status(200).json({ code: 200, message: token });
         } else {
             return res.status(200).json({ code: 401, message: "Usuario y/o contraseña incorrectos" });
         }
