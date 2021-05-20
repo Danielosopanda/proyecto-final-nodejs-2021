@@ -52,8 +52,7 @@ employeeForm.addEventListener("submit", (e) => {
     } else {
         window.location.href = "index.html";
     }
-        
-    e.preventDefault();
+    
 });
 
 
