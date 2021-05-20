@@ -340,7 +340,7 @@ body {
 /*** Scrollbar ***/
 
 ::-webkit-scrollbar {
-    width: 8px;
+    width: 10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -354,6 +354,10 @@ body {
     /* margin: 1px; */
     width: 10px;
     border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #aaa;
 }
 
 /**** Íconos ****/

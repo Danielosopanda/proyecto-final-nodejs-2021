@@ -21,7 +21,7 @@ const loadEmployees = () => {
     axios.get(`${url}/employee`, headers)
 
     .then(response => {
-        console.log(response);
+        /* console.log(response); */
         displayEmployee(response.data.message);
     })
     .catch(error => {
@@ -36,25 +36,24 @@ const displayEmployee = (employee) => {
 
     employee.forEach(empleado => {
 
-        console.log(empleado.nombreEmpleado, empleado.apellidosEmpleado, empleado.emailEmpleado, empleado.telefonoEmpleado, empleado.direccionEmpleado)
-
         employeeTable.innerHTML += ` 
-                            <tr>
-                                <td>${empleado.nombreEmpleado}</td>
-                                <td>${empleado.apellidosEmpleado}</td>
-                                <td>${empleado.emailEmpleado}</td>
-                                <td>${empleado.telefonoEmpleado}</td>
-                                <td>${empleado.direccionEmpleado}</td>
-                                <td class="userBtns">
-                                    <button class="sombra editEmployee">
-                                        <i class="fas fa-user-edit"></i>
-                                    </button>
-                                    <button class="sombra removeEmployee">
-                                        <i class="fas fa-minus-circle"></i>
-                                    </button>
-                                </td>
-                            </tr>
-                        `;
+                                    <tr>
+                                        <td>${empleado.idEmpleado}</td>
+                                        <td>${empleado.nombreEmpleado}</td>
+                                        <td>${empleado.apellidosEmpleado}</td>
+                                        <td>${empleado.emailEmpleado}</td>
+                                        <td>${empleado.telefonoEmpleado}</td>
+                                        <td>${empleado.direccionEmpleado}</td>
+                                        <td class="userBtns">
+                                            <button class="sombra editEmployee">
+                                                <i class="fas fa-user-edit"></i>
+                                            </button>
+                                            <button class="sombra removeEmployee">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                `;
 
     });
 
