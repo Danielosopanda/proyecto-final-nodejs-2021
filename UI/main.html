@@ -12,11 +12,25 @@
 <body>
     <div class="container" id="container">
         <div class="dashboard sombra">
+            <!-- Header -->
             <div class="dashboardHeader">
+
+                <!-- Barra de búsqueda -->
+                <div class="searchContainer">
+                    <form class="searchForm">
+                        <div class="searchField">
+                            <input type="search" id="searchBar" placeholder="Buscar un empleado" class="searchBar">
+                            <button type="submit" class="sombra"><i class="fas fa-search"></i></button>
+                        </div>
+                        
+                    </form>
+                </div>
+
                 <div class="datosUsuario">
                     <img class="imgUsuario" src="https://dummyimage.com/500x500/000/fff" alt="">
                 </div>
             </div>
+
             <div class="dashboardMain">
 
                 <!-- Tabla de empleados -->
@@ -145,6 +159,6 @@
     <script src="JS/addEmployee.js"></script>
     <script src="JS/deleteEmployee.js"></script>
     <script src="JS/editEmployee.js"></script>
-    
+    <script src="JS/searchEmployee.js"></script>
 </body>
 </html>

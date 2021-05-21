@@ -101,13 +101,45 @@ body {
 .dashboard .dashboardHeader {
     display: flex;
     width: 100%;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
     background: var(--secondaryColor);
     border-radius: var(--borderRadius) var(--borderRadius) 0 0;
     height: 100%;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
     padding: var(--dashboardPadding);
+}
+
+.dashboardHeader .searchContainer {
+    width: 50%;
+    margin-left: 8px;
+}
+
+.dashboardHeader .searchForm {
+    display: flex;
+    flex-direction: column;
+    /* width: 100%; */
+}
+
+.searchForm button {
+    /* position: relative;
+    right: 4px; */
+    cursor: pointer;
+    border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+    border: 1px solid black;
+    height: 30px;
+    width: 30px;
+}
+
+.searchForm button i {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.searchForm .searchBar {
+    padding: 4px;
+    width: 45%;
+    outline: none;
 }
 
 .datosUsuario {
@@ -155,12 +187,12 @@ body {
 
 .listaEmpleados th {
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr 4fr 2fr 3fr;
+    grid-template-columns: 1fr 2fr 2fr 3fr 2fr 4fr;
 }
 
 .listaEmpleados tr {
     display: grid;
-    grid-template-columns: 1fr 2fr 3fr 4fr 2fr 3fr;
+    grid-template-columns: 1fr 2fr 2fr 3fr 2fr 4fr;
     padding: 4px 0;
     text-align: left;
     border-bottom: 1px solid black;
