@@ -1,49 +1,26 @@
-const   acceptDelete = document.querySelector("#acceptDelete"),
-        cancelDelete = document.querySelector("#cancelDelete"),
-        deleteForm = document.querySelector("#deleteEmployeeForm"),
-        scontainer = document.querySelector("#container");
+var headers={};
+const   deleteForm = document.querySelector("#deleteEmployeeForm"),
+        employeeId = document.querySelector("id");
 
-window.addEventListener("load", () => {
-
-    setTimeout(() => {
-
-        const delBtns = document.querySelectorAll(".removeEmployee");
-
-        var hidden = true;
-        
-        delBtns.forEach(btn => {
-            btn.addEventListener("click", () => {
-        
-                if(hidden) {        
-                    deleteForm.style.visibility = "visible";
-                    container.style.filter = "blur(4px)";
-                    deleteForm.style.display = "flex";
-                    hidden = false;
-                }
-            });
-        });
-        
-        cancelDelete.addEventListener("click", () => {
-            if(!hidden) {
-                deleteForm.style.visibility = "hidden";
-                container.style.filter = "none";
-                deleteForm.style.display = "none";
-                hidden = true;
+       
+deleteForm.addEventListener("submit",(e)=>{
+    let id = employeeId.value;
+    if(localStorage.getItem("token")){
+        axios({
+            method :"DELETE",
+            url : "http://localhost:3000/employee/",
+            data :{
+                idEmpleado: id
+            },
+            headers:{
+                'Authorization': "bearer "+localStorage.getItem("token")
             }
-        });
-        
-        acceptDelete.addEventListener("click", () => {
-        
-            axios({
-                method: "DELETE",
-                url: "http://localhost:3000/employee",
-                data: {
-                    
-                }
-            });
-        
-        });
-
-    }, 500);
-    
+        }).then((response)=>{
+            console.log(response);
+        }).catch((error)=>{
+            console.log(error);
+        })
+    }else{
+        window.location.href ="index.html";
+    }
 });
