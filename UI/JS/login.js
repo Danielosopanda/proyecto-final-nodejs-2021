@@ -7,7 +7,7 @@ window.onload = () => {
     if(!localStorage.getItem("token")) {
         form.addEventListener("submit", login);
     } else {
-        window.location.href = "login.html";
+        window.location.href = "main.html";
     }
 }
 

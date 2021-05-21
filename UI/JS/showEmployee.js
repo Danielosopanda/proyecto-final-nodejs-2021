@@ -26,7 +26,7 @@ const loadEmployees = () => {
     })
     .catch(error => {
         console.log(error);
-    })
+    });
 
 }
 
@@ -44,14 +44,6 @@ const displayEmployee = (employee) => {
                                         <td>${empleado.emailEmpleado}</td>
                                         <td>${empleado.telefonoEmpleado}</td>
                                         <td>${empleado.direccionEmpleado}</td>
-                                        <td class="userBtns">
-                                            <button class="sombra editEmployee">
-                                                <i class="fas fa-user-edit"></i>
-                                            </button>
-                                            <button class="sombra removeEmployee">
-                                                <i class="fas fa-minus-circle"></i>
-                                            </button>
-                                        </td>
                                     </tr>
                                 `;
 

@@ -28,13 +28,20 @@
                             <th>Email</th>
                             <th>Teléfono</th>
                             <th>Dirección</th>
-                            <th></th>
+                            
                         </tr>
-                        
                     </table>
                 </div>
                 <div class="buttons">
-                    <button id="btnAdd" class="btnAdd sombra"><i class="fas fa-user-plus btnIcon"></i></button>
+                    <button id="btnEdit" class="btn sombra editEmployee">
+                        <i class="fas fa-user-edit btnIcon"></i>
+                    </button>
+                    <button id="btnRemove" class="btn sombra removeEmployee">
+                        <i class="fas fa-minus-circle btnIcon"></i>
+                    </button>
+                    <button id="btnAdd" class="btn sombra">
+                        <i class="fas fa-user-plus btnIcon"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -69,9 +76,15 @@
     </form>
 
     <form id="deleteEmployeeForm" class="deleteEmployeeForm sombra form">
-        <h3>¿Eliminar empleado?</h3>
+        <h3>Eliminar empleado</h3>
+
+        <div class="field">
+            <label for="deleteEmployee">ID</label>
+            <input class="textInput" id="deleteEmployee" type="text" placeholder="1">
+        </div>
+        
         <div class="deleteBtns">
-            <button id="cancelDelete" class="sombra cancelDelete">
+            <button type="button" id="cancelDelete" class="sombra cancelDelete">
                 <i class="fas fa-times btnIcon cancelIcon"></i>
             </button>
             <button id="acceptDelete" class="sombra acceptDelete">
