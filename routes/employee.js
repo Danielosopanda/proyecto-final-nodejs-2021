@@ -47,14 +47,18 @@ employee.delete("/:id([0-9]{1,5})", async (req, res, next) => {
     return res.status(404).json({ code: 404, message: "Empleado no encontrado" });
 });
 
-employee.put("/:id([0-9]{1-3})", async(req, res, next) => {
+employee.put("/:id([0-9]{1,5})", async (req, res, next) => {
+
+    const idEmpleado = req.params.id;
 
     const { nombreEmpleado, apellidosEmpleado, emailEmpleado, telefonoEmpleado, direccionEmpleado } = req.body;
 
     if(nombreEmpleado && apellidosEmpleado && emailEmpleado && telefonoEmpleado && direccionEmpleado){
         
         let query= `UPDATE Empleado SET nombreEmpleado = '${nombreEmpleado}', apellidosEmpleado = '${apellidosEmpleado}', `;
-        query += `emailEmpleado = '${emailEmpleado}', telefonoEmpleado = '${telefonoEmpleado}', direccionEmpleado = '${direccionEmpleado}'`;
+        query += `emailEmpleado = '${emailEmpleado}', telefonoEmpleado = '${telefonoEmpleado}', direccionEmpleado = '${direccionEmpleado}' WHERE 
+                    idEmpleado = ${idEmpleado}`;
+
         const rows = await db.query(query);
 
         if(rows.affectedRows == 1){

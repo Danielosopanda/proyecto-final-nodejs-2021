@@ -245,7 +245,13 @@ body {
     top: 25%;
     left: 37.5%;
     visibility: hidden;
-    transition: 300ms ease all;
+}
+
+.editEmployeeForm {
+    position: absolute;
+    top: 20%;
+    left: 37.5%;
+    visibility: hidden;
 }
 
 .formButtons {
@@ -275,6 +281,11 @@ body {
     margin-top: 0;
 }
 
+.editUserBtn, .addEmployeeBtn {
+    height: 100%;
+    margin-top: 0;
+}
+
 .formBtn:hover {
     background: #40454e;
 }
@@ -298,7 +309,7 @@ body {
 
 .deleteEmployeeForm .deleteBtns {
      display: grid;
-     margin-top: 6px;
+     margin-top: 12px;
      gap: 8px;
      width: 100%;
      grid-template-columns: 1fr 3fr;

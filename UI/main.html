@@ -18,6 +18,8 @@
                 </div>
             </div>
             <div class="dashboardMain">
+
+                <!-- Tabla de empleados -->
                 <div class="listaEmpleados sombra">
                     <h2>Empleados</h2>
                     <table id="tablaEmpleados" class="tablaEmpleados">
@@ -32,13 +34,17 @@
                         </tr>
                     </table>
                 </div>
+
+                <!-- Botones sección derecha -->
                 <div class="buttons">
                     <button id="btnEdit" class="btn sombra editEmployee">
                         <i class="fas fa-user-edit btnIcon"></i>
                     </button>
+
                     <button id="btnDelete" class="btn sombra removeEmployee">
                         <i class="fas fa-minus-circle btnIcon"></i>
                     </button>
+
                     <button id="btnAdd" class="btn sombra">
                         <i class="fas fa-user-plus btnIcon"></i>
                     </button>
@@ -46,6 +52,8 @@
             </div>
         </div>
     </div>
+
+    <!-- Añadir empleado -->
     <form method="POST" class="addEmployeeForm form sombra" id="addEmployeeForm">
         <h2>Añadir nuevo empleado</h2>
         <div class="field">
@@ -71,10 +79,11 @@
         </div>
         <div class="formButtons">
             <button type="button" class="cancelBtn sombra" id="cancelAdd"><i class="fas fa-times btnIcon cancelIcon"></i></button>
-            <button type="submit" id="addEmployeeBtn" class="formBtn btn sombra">Agregar</button>
+            <button type="submit" id="addEmployeeBtn" class="formBtn btn sombra addEmployeeBtn">Agregar</button>
         </div>
     </form>
 
+    <!-- Eliminar empleado -->
     <form id="deleteEmployeeForm" class="deleteEmployeeForm sombra form">
         <h3>Eliminar empleado</h3>
 
@@ -93,12 +102,49 @@
         </div>
     </form>
 
+    <!-- Editar empleado -->
+    <form class="editEmployeeForm form sombra" id="editEmployeeForm">
+        <h2>Editar empleado</h2>
+
+        <div class="field">
+            <label for="editId">ID</label>
+            <input class="textInput" id="editId" type="text" placeholder="1">
+        </div>
+
+        <div class="field">
+            <label for="editName">Nombre</label>
+            <input id="editName" class="textInput" type="text" placeholder="Nuevo nombre">
+        </div>
+        <div class="field">
+            <label for="editLastName">Apellidos</label>
+            <input id="editLastName" class="textInput" type="text" placeholder="Nuevos apellidos">
+        </div>
+        <div class="field">
+            <label for="editPhone">Teléfono</label>
+            <input id="editPhone" class="textInput" placeholder="Nuevo teléfono" type="text">
+        </div>
+        <div class="field">
+            <label for="editEmail">Correo electrónico</label>
+            <input id="editEmail" class="textInput" placeholder="Nuevo correo electrónico" type="text">
+        </div>
+
+        <div class="field">
+            <label for="editAdress">Dirección</label>
+            <input id="editAdress" class="textInput" placeholder="Nueva dirección" type="text">
+        </div>
+        <div class="formButtons">
+            <button type="button" class="cancelBtn sombra" id="cancelEdit"><i class="fas fa-times btnIcon cancelIcon"></i></button>
+            <button type="submit" id="editEmployeeBtn" class="formBtn btn sombra editUserBtn">Editar</button>
+        </div>
+    </form>
+
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="JS/addEmployeeFront.js"></script>
     <script src="JS/showEmployee.js"></script>
     <script src="JS/addEmployee.js"></script>
     <script src="JS/deleteEmployee.js"></script>
+    <script src="JS/editEmployee.js"></script>
     
 </body>
 </html>
