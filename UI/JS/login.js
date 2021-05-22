@@ -16,7 +16,6 @@ const login = (e) => {
     let email = emailInput.value,
         password = passwordInput.value;
     
-    console.log(email, password);
 
     axios({
 

@@ -1,3 +1,11 @@
+const deleteRegEx = {
+    id: /^[0-9]{1,5}$/
+}
+
+const deleteCampos = {
+    id: false
+}
+
 const   acceptDelete = document.querySelector("#acceptDelete"),
         cancelDelete = document.querySelector("#cancelDelete"),
         deleteForm = document.querySelector("#deleteEmployeeForm"),
@@ -30,23 +38,43 @@ deleteForm.addEventListener("submit", (e)=>{
 
     let id = employeeId.value;
 
-    if(localStorage.getItem("token")){
-        axios({
-            method: "DELETE",
-            url: "http://localhost:3000/employee/" + id,
-            data: {
-                idEmpleado: id
-            },
-            headers:{
-                'Authorization': "bearer " + localStorage.getItem("token")
-            }
-        }).then((response)=>{
-            console.log(response);
-        }).catch((error)=>{
-            console.log(error);
-        })
+    verifyDeleteId(id);
+
+    if(deleteCampos.id) {
+
+        if(localStorage.getItem("token")){
+            axios({
+                method: "DELETE",
+                url: "http://localhost:3000/employee/" + id,
+                data: {
+                    idEmpleado: id
+                },
+                headers:{
+                    'Authorization': "bearer " + localStorage.getItem("token")
+                }
+            }).then((response)=>{
+                console.log(response);
+            }).catch((error)=>{
+                console.log(error);
+            })
+    
+        } else {
+            window.location.href ="index.html";
+        }
 
     } else {
-        window.location.href ="index.html";
+        e.preventDefault();
     }
+
+    
 });
+
+const verifyDeleteId = (id) => {
+    if(deleteRegEx.id.test(id)) {
+        employeeId.style.border = "2px solid #4bb543";
+        deleteCampos.id = true;
+    } else {
+        employeeId.style.border = "2px solid #cc0000";
+        deleteCampos.id = false;   
+    }
+}
