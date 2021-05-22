@@ -125,9 +125,9 @@ body {
     /* position: relative;
     right: 4px; */
     cursor: pointer;
-    border-radius: 0 var(--borderRadius) var(--borderRadius) 0;
+    border-radius: 0 3px 3px 0;
     border: 1px solid black;
-    height: 30px;
+    /* height: 30px; */
     width: 30px;
 }
 
@@ -140,6 +140,8 @@ body {
     padding: 4px;
     width: 45%;
     outline: none;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid black;
 }
 
 .datosUsuario {

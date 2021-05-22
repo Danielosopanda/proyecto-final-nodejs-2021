@@ -12,12 +12,18 @@ employee.get("/", async (request, response, next) => {
 
 employee.get("/:nombreEmpleado", async (request, response, next) => {
 
-    let nombre = request.params.nombreEmpleado;
+    let nombreEmpleado = request.params.nombreEmpleado.split("_").join(" ");
+    console.log(nombreEmpleado)
+    const { apellidosEmpleado } = request.body;
+    apellidosEmpleado = apellidosEmpleado.split("_").join(" ");
+    console.log(apellidosEmpleado)
 
-    let query = `SELECT * FROM Empleado WHERE nombreEmpleado = '${nombre}'`;
-    const rows = await db.query(query);
-    return response.status(200).json({ code: 200, message: rows });
-
+    if(nombreEmpleado && apellidosEmpleado) {
+        let query = `SELECT * FROM Empleado WHERE nombreEmpleado = '${nombre}' AND apellidosEmpleado = '${apellidosEmpleado}'`;
+        const rows = await db.query(query);
+        return response.status(200).json({ code: 200, message: rows });
+    }
+    return response.status(500).json({ code: 500, message: "Nombre incompleto" });
 });
 
 employee.post("/", async (request, response, next) => {
