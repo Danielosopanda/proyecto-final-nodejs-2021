@@ -34,8 +34,17 @@ const displayEmployee = (employee) => {
 
     let employeeTable = document.querySelector("#tablaEmpleados");
 
-    employee.forEach(empleado => {
+    employeeTable.innerHTML = `
+                                <tr class="tableHeaders">
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>
+                                </tr>`;
 
+    employee.forEach(empleado => {
         employeeTable.innerHTML += ` 
                                     <tr>
                                         <td>${empleado.idEmpleado}</td>

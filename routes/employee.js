@@ -10,16 +10,18 @@ employee.get("/", async (request, response, next) => {
 
 });
 
-employee.get("/:nombreEmpleado", async (request, response, next) => {
+employee.get("/:nombreEmpleado/:ap", async (request, response, next) => {
 
     let nombreEmpleado = request.params.nombreEmpleado.split("_").join(" ");
+    
+    let apellidosEmpleado = request.params.ap.split("_").join(" ");
     console.log(nombreEmpleado)
-    const { apellidosEmpleado } = request.body;
-    apellidosEmpleado = apellidosEmpleado.split("_").join(" ");
+
+    /* apellidosEmpleado = apellidosEmpleado.split("_"); */
     console.log(apellidosEmpleado)
 
     if(nombreEmpleado && apellidosEmpleado) {
-        let query = `SELECT * FROM Empleado WHERE nombreEmpleado = '${nombre}' AND apellidosEmpleado = '${apellidosEmpleado}'`;
+        let query = `SELECT * FROM Empleado WHERE nombreEmpleado = '${nombreEmpleado}' AND apellidosEmpleado = '${apellidosEmpleado}'`;
         const rows = await db.query(query);
         return response.status(200).json({ code: 200, message: rows });
     }

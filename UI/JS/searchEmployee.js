@@ -1,5 +1,6 @@
 const   searchForm = document.querySelector("#searchForm"),
-        searchBar = document.querySelector("#searchBar");
+        searchBar = document.querySelector("#searchBar"),
+        tabla = document.querySelector("#tablaEmpleados");
 
 searchForm.addEventListener("submit", (e) => {
 
@@ -23,21 +24,41 @@ searchForm.addEventListener("submit", (e) => {
             employeeName = names[0];
         }
         
-        console.log(employeeName);
-        console.log(apellidos)
+        console.log(employeeName, apellidos);
         
         axios({
             method: "GET",
-            url: `http://localhost:3000/employee/${employeeName}`,
-            data: {
-                apellidosEmpleado: apellido
-            },
+            url: "http://localhost:3000/employee/" + employeeName + "/" + apellidos,
+            /* data: {
+                apellidosEmpleado: apellidos
+            }, */
             headers: {
                 'Authorization': "bearer " + localStorage.getItem("token")
             }
         })
         .then(response => {
-            console.log(response);
+            let empleado = response.data.message[0];
+            console.log(empleado)
+
+            tabla.innerHTML = `
+                                <tr class="tableHeaders">
+                                    <th>ID</th>
+                                    <th>Nombre</th>
+                                    <th>Apellidos</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Dirección</th>  
+                                </tr>
+                                <tr>
+                                    <td>${empleado.idEmpleado}</td>
+                                    <td>${empleado.nombreEmpleado}</td>
+                                    <td>${empleado.apellidosEmpleado}</td>
+                                    <td>${empleado.emailEmpleado}</td>
+                                    <td>${empleado.telefonoEmpleado}</td>
+                                    <td>${empleado.direccionEmpleado}</td>
+                                </tr>
+                            `;
+            searchBar.value = "";
         })
         .catch(error => {
             console.log(error);
@@ -46,8 +67,6 @@ searchForm.addEventListener("submit", (e) => {
     } else {
         window.location.href = "login.html";
     }
-
-    
 
     e.preventDefault();
 
