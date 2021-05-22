@@ -24,21 +24,15 @@ searchForm.addEventListener("submit", (e) => {
             employeeName = names[0];
         }
         
-        console.log(employeeName, apellidos);
-        
         axios({
             method: "GET",
             url: "http://localhost:3000/employee/" + employeeName + "/" + apellidos,
-            /* data: {
-                apellidosEmpleado: apellidos
-            }, */
             headers: {
                 'Authorization': "bearer " + localStorage.getItem("token")
             }
         })
         .then(response => {
             let empleado = response.data.message[0];
-            console.log(empleado)
 
             tabla.innerHTML = `
                                 <tr class="tableHeaders">

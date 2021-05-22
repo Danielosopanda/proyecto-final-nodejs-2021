@@ -13,12 +13,7 @@ employee.get("/", async (request, response, next) => {
 employee.get("/:nombreEmpleado/:ap", async (request, response, next) => {
 
     let nombreEmpleado = request.params.nombreEmpleado.split("_").join(" ");
-    
     let apellidosEmpleado = request.params.ap.split("_").join(" ");
-    console.log(nombreEmpleado)
-
-    /* apellidosEmpleado = apellidosEmpleado.split("_"); */
-    console.log(apellidosEmpleado)
 
     if(nombreEmpleado && apellidosEmpleado) {
         let query = `SELECT * FROM Empleado WHERE nombreEmpleado = '${nombreEmpleado}' AND apellidosEmpleado = '${apellidosEmpleado}'`;
@@ -72,10 +67,10 @@ employee.put("/:id([0-9]{1,5})", async (req, res, next) => {
         if(rows.affectedRows == 1){
             return res.status(200).json({ code: 200, message: "Empleado actualizado" });
         }
-        return res.status(500).json({ code: 500, message: "Error" });
+        return res.status(500).json({ code: 500, message: "Error interno" });
     }
 
-    return res.status(500).json({code: 500, message: "Campos incompletos, intente nuevamente"})
+    return res.status(500).json({ code: 500, message: "Campos incompletos, intente nuevamente" })
 
 })
 

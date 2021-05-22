@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 user.post("/login", async (req, res, next)=>{
     const { correoUsuario, passwordUsuario } = req.body;
     const query = `SELECT * FROM Usuario WHERE correoUsuario = '${correoUsuario}' AND passwordUsuario = '${passwordUsuario}';`;
-    console.log(query)
     
     const rows = await db.query(query);
 

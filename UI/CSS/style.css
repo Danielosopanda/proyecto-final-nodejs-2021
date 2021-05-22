@@ -62,10 +62,12 @@ body {
 }
 
 .field .textInput {
+    border: 2px solid #000;
     margin-top: 1px;
     padding: 4px 3px;
     outline: none;
     font-size: 14px;
+    transition: 200ms ease all;
 }
 
 .form .btn {
@@ -122,12 +124,9 @@ body {
 }
 
 .searchForm button {
-    /* position: relative;
-    right: 4px; */
     cursor: pointer;
     border-radius: 0 3px 3px 0;
-    border: 1px solid black;
-    /* height: 30px; */
+    border: 1px solid #000;
     width: 30px;
 }
 
@@ -141,7 +140,7 @@ body {
     width: 45%;
     outline: none;
     border-radius: 3px 0 0 3px;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 
 .datosUsuario {
@@ -197,7 +196,7 @@ body {
     grid-template-columns: 1fr 2fr 2fr 3fr 2fr 4fr;
     padding: 4px 0;
     text-align: left;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid #000;
 }
 
 .listaEmpleados tr th {
@@ -227,7 +226,7 @@ body {
     cursor: pointer;
     background: #fafafa;
     outline: none;
-    border: 1px solid black;
+    border: 1px solid #000;
     
 }
 
